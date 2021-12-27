@@ -1,8 +1,6 @@
-import { DataSource } from '@angular/cdk/collections';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Calendar, CalendarPanelComponent } from 'material-calendar';
-import { CalendarConfig, DayC } from 'material-calendar';
-import { GolyasakkEvent } from '../golyasakkEvents';
+import { Component, OnInit } from '@angular/core';
+import { DayC } from 'material-calendar';
+import { GolyasakkEvent } from '../eventcalendar/golyasakkEvents';
 import { GolyasakkNews } from '../golyasakkNews'; 
 
 @Component({
