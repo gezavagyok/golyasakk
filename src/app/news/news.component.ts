@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DayC } from 'material-calendar';
 import { GolyasakkEvent } from '../eventcalendar/golyasakkEvents';
-import { GolyasakkNews } from '../golyasakkNews'; 
+import { GolyasakkNews } from './golyasakkNews'; 
 
 @Component({
   selector: 'app-news',

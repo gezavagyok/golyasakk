@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ChesscomPuzzle } from 'src/chesscompuzzle';
+import { ChesscomPuzzle } from 'src/app/chesscompuzzle';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
