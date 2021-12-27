@@ -13,13 +13,22 @@ import { EventcalendarComponent } from './eventcalendar/eventcalendar.component'
 import { ToolbarmenuComponent } from './toolbarmenu/toolbarmenu.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
+import { MatButtonToggle, MatButtonToggleModule } from '@angular/material/button-toggle';
+import { AppRoutingModule } from './app-routing.module'
+import { MaterialCalendarModule } from 'material-calendar';
+import { LOCALE_ID } from '@angular/core';
+import { MatCardModule } from '@angular/material/card'
+import { MatGridListModule } from '@angular/material/grid-list'
+import { MatListModule} from '@angular/material/list'
+import { MatDividerModule} from '@angular/material/divider'
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    PuzzlesComponent, ChessboardComponent, NewsComponent, 
-    GalleryComponent, AboutusComponent, EventcalendarComponent, 
-    ToolbarmenuComponent, 
+    AppComponent,
+    PuzzlesComponent, ChessboardComponent, NewsComponent,
+    GalleryComponent, AboutusComponent, EventcalendarComponent,
+    ToolbarmenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +36,10 @@ import { MatIconModule } from '@angular/material/icon'
     NgxChessgroundModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule, MatButtonModule, MatButtonToggleModule, AppRoutingModule,
+    MaterialCalendarModule, MatCardModule, MatGridListModule, MatDividerModule, MatListModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'hu-HU' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

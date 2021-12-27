@@ -1,1 +1,27 @@
-<p>news works!</p>
+<div class="gold-background">
+    <h2>Híreink: </h2>
+    <mat-grid-list cols="5">
+        <mat-grid-tile [colspan]="3" [rowspan]="1">
+            
+            <ul>
+                
+                <li *ngFor="let item of news">
+                    <mat-card class="news-card">
+                        <mat-card-title>{{item.title}}</mat-card-title>
+                        <mat-card-subtitle>{{item.date}}</mat-card-subtitle>
+                        <mat-card-content>
+                            <p>{{item.description}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
+            </ul>
+        </mat-grid-tile>
+
+        <!-- <mat-grid-tile [colspan]="1" [rowspan]="1" rowHeight="600px"></mat-grid-tile> -->
+        <mat-grid-tile [colspan]="2" [rowspan]="2" rowHeight="600px">
+            <div class="white-background">
+                <calendar-panel [dataSource]="dataSource" (clickDate)="eventClick($event)"></calendar-panel>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
