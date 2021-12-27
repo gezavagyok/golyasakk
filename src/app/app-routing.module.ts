@@ -6,6 +6,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'news', pathMatch: 'full' },
   { path: 'news', component: NewsComponent},
   { path: 'img', component: GalleryComponent},
   { path: 'about', component: AboutusComponent}

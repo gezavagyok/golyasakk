@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LichessPuzzle } from 'src/lichesspuzzle';
+import { LichessPuzzle } from 'src/app/lichesspuzzle';
 
 @Injectable({
   providedIn: 'root'

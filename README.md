@@ -1,27 +1,27 @@
 # Golyasakk
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+[Angular CLI](https://github.com/angular/angular-cli) v13.0.4.
 
-## Development server
+## Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ng serve --open` - dev server.
 
-## Code scaffolding
+## Modules
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+aboutus: Elérhetőség fül
+chessboard: - nincs használva, ha lenne puzzle fül, ez renderelné ki a napi puzzle-t, be kellene hozzá kötni 2 dolgot:
+* chessground - tábla
+* chess.js - sakk lépéseket validál, minimál AI
+eventcalendar: - nincs használva, de ide kellene refaktorálni a news rész naptárát.
+gallery: Képek fül
+news: Hírek fül, kezdőoldal
+puzzles: nincs használva, ha
+toolbarmenu: oldal tetején ez a menü + navigáció
 
-## Build
+# Service
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+chesscom service: chess.com napi puzzle-ját adja vissza
+lichess service: lichess.org napi puzzle-jét adja vissza
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

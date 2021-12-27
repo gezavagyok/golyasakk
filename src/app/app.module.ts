@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PuzzlesComponent } from './puzzles/puzzles.component';
 import { ChessboardComponent } from './chessboard/chessboard.component';
-import { NgxChessgroundComponent, NgxChessgroundModule } from 'ngx-chessground';
+import { NgxChessgroundModule } from 'ngx-chessground';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewsComponent } from './news/news.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -14,7 +14,7 @@ import { ToolbarmenuComponent } from './toolbarmenu/toolbarmenu.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon'
 import { MatButtonModule } from '@angular/material/button'
-import { MatButtonToggle, MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { AppRoutingModule } from './app-routing.module'
 import { MaterialCalendarModule } from 'material-calendar';
 import { LOCALE_ID } from '@angular/core';
