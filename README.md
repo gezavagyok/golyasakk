@@ -10,8 +10,12 @@
 
 aboutus: Elérhetőség fül
 chessboard: - nincs használva, ha lenne puzzle fül, ez renderelné ki a napi puzzle-t, be kellene hozzá kötni 2 dolgot:
+
+
 * chessground - tábla
 * chess.js - sakk lépéseket validál, minimál AI
+
+
 eventcalendar: - nincs használva, de ide kellene refaktorálni a news rész naptárát.
 gallery: Képek fül
 news: Hírek fül, kezdőoldal
