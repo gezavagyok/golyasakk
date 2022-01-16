@@ -7,15 +7,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LibraryComponent } from './library/library.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'news', pathMatch: 'full' },
-  { path: 'news', component: NewsComponent},
-  { path: 'img', component: GalleryComponent},
-  { path: 'about', component: AboutusComponent},
-  { path: 'library', component: LibraryComponent}
+  { path: '', redirectTo: 'hirek', pathMatch: 'full' },
+  { path: 'hirek', component: NewsComponent},
+  { path: 'kepek', component: GalleryComponent},
+  { path: 'elerhetoseg', component: AboutusComponent},
+  { path: 'konyvtar', component: LibraryComponent}
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
