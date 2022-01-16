@@ -5,7 +5,7 @@
           The actual rendered columns are set as a property on the row definition" -->
         <ng-container matColumnDef="Kép">
             <th mat-header-cell *matHeaderCellDef> Kép </th>
-            <td mat-cell *matCellDef="let element"> <img src="assets/img/book.png"> </td>
+            <td mat-cell *matCellDef="let element"> <img src={{element.img}}> </td>
         </ng-container>
 
 
