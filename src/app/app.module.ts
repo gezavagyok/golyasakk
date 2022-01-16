@@ -21,7 +21,9 @@ import { LOCALE_ID } from '@angular/core';
 import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatListModule} from '@angular/material/list'
-import { MatDividerModule} from '@angular/material/divider'
+import { MatDividerModule} from '@angular/material/divider';
+import { LibraryComponent } from './library/library.component'
+import { MatTableModule } from '@angular/material/table'
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { MatDividerModule} from '@angular/material/divider'
     PuzzlesComponent, ChessboardComponent, NewsComponent,
     GalleryComponent, AboutusComponent, EventcalendarComponent,
     ToolbarmenuComponent,
+    LibraryComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { MatDividerModule} from '@angular/material/divider'
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule, MatButtonModule, MatButtonToggleModule, AppRoutingModule,
-    MaterialCalendarModule, MatCardModule, MatGridListModule, MatDividerModule, MatListModule
+    MaterialCalendarModule, MatCardModule, MatGridListModule, MatDividerModule, 
+    MatListModule, MatTableModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'hu-HU' }],
   bootstrap: [AppComponent]
