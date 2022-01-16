@@ -28,19 +28,19 @@ export class NewsComponent implements OnInit {
   ngOnInit(): void {
     this.golyasakkEvents.push({ 
       title: "Újévi sakkozás", 
-      url: 'https://www.facebook.com/golyasakk/photos/a.133241985739127/139107251819267/', 
-      year: 2021,
-      month: 12,
-      day: 20,
+      url: 'https://www.facebook.com/golyasakk/', 
+      year: 2022,
+      month: 1,
+      day: 16,
       color: this.freestyleChessColor
     })   
 
     this.golyasakkEvents.push({ 
       title: "Edzes", 
-      url: 'https://www.facebook.com/golyasakk/photos/a.133241985739127/139107251819267/', 
-      year: 2021,
-      month: 12,
-      day: 22,
+      url: 'https://www.facebook.com/golyasakk/', 
+      year: 2022,
+      month: 1,
+      day: 23,
       color: this.trainingEventColor
     })  
 
@@ -53,8 +53,14 @@ export class NewsComponent implements OnInit {
     });
 
     this.news.push({
+      title: "Könyvtár",
+      description: "Kaptunk pár könyvet, amiket olvashattok, vagy akár ki is kölcsönözhettek majd. Van köztük edzéshez ajánlott, ismeretterjesztő, életrajz, és kicsit már ezoterikus könyv is. A könyvek listájáért katt a könyvtár menüpontra!",
+      img: "",
+      date: "2022. Jan. 16 - Geza"
+    })
+    this.news.push({
       title: "Az új év első sakkozása",
-      description: "Sziasztok\nJanuár 9.-én kezdünk, 17:00-kor!",
+      description: "Sziasztok\nJanuár 16.-án kezdünk, 17:00-kor!",
       img: "",
       date: "2021. Dec. 27 - Geza"
     })
@@ -64,6 +70,7 @@ export class NewsComponent implements OnInit {
       img: "",
       date: "2021. Dec. 27 - Geza"
     })
+    
   }
 
   getToday(): number {
