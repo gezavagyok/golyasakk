@@ -38,7 +38,8 @@ export class NewsComponent implements OnInit {
     this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.newsWorksheetName, newsAttributeMapping);
     this.dataSource = this.googleSheetsDbService.get<GolyasakkEvent>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.eventsWorksheetName, eventsAttributeMapping)
       .pipe(map(d => d.map(gevent => {
-        return {date: this.getDay(gevent.year, gevent.month, gevent.day),
+        return {
+          date: this.getDay(gevent.year, gevent.month, gevent.day),
           backgroundColor: gevent.color,
           toolTip: gevent.title + '\n' + gevent.url
         };
@@ -51,7 +52,6 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
   getDay(year: number, month: number, day: number): number {
