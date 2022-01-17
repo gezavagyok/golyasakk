@@ -1,5 +1,11 @@
+
 export const environment = {
-  production: true,
+  production: false,
+  googleSheetsApiKey: 'AIzaSyDIFqbiUW5WN99BxOSgcWywSoZT7RGOZIg',
+  spreadsheetConf: {
+    spreadsheetId: '19oR8tscPfFGg6CX5opEEfjf8ueTCM125C4gaF6q0le4',
+    worksheetName: 'news',
+  },
   firebase: {
     apiKey: "AIzaSyDTOODcpQRe_K1JS3jZ-dZx5OkPse4eRaw",
     authDomain: "golyasakk-cfed0.firebaseapp.com",

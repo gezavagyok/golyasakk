@@ -22,8 +22,9 @@ import { MatCardModule } from '@angular/material/card'
 import { MatGridListModule } from '@angular/material/grid-list'
 import { MatListModule} from '@angular/material/list'
 import { MatDividerModule} from '@angular/material/divider';
-import { LibraryComponent } from './library/library.component'
-import { MatTableModule } from '@angular/material/table'
+import { LibraryComponent } from './library/library.component';
+import { MatTableModule } from '@angular/material/table';
+import { API_KEY, GoogleSheetsDbService} from 'ng-google-sheets-db';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { MatTableModule } from '@angular/material/table'
     MaterialCalendarModule, MatCardModule, MatGridListModule, MatDividerModule, 
     MatListModule, MatTableModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'hu-HU' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'hu-HU' },
+              { provide: API_KEY, useValue: 'AIzaSyDIFqbiUW5WN99BxOSgcWywSoZT7RGOZIg'},
+            GoogleSheetsDbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { DayC } from 'material-calendar';
 import { GolyasakkEvent } from '../eventcalendar/golyasakkEvents';
 import { GolyasakkNews } from './golyasakkNews'; 
+import { GoogleSheetsDbService } from 'ng-google-sheets-db';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+const attributeMapping = {
+  title: "title",
+  description: "description",
+  img: "img",
+  date: "date"
+};
 
 @Component({
   selector: 'app-news',
@@ -10,15 +20,18 @@ import { GolyasakkNews } from './golyasakkNews';
 })
 export class NewsComponent implements OnInit {
 
+  news: Observable<GolyasakkNews[]>;
+
   golyasakkEvents: GolyasakkEvent[] = []
   dataSource: DayC[] = []
-  news: GolyasakkNews[] = []  
 
   freestyleChessColor = '#0167c7';
   trainingEventColor = '#01a7ca'; 
   championshipColor = '#aa67c7';
 
-  constructor() { }
+  constructor(private googleSheetsDbService: GoogleSheetsDbService) { 
+    this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.worksheetName, attributeMapping)
+  }
 
   eventClick(event: any) {
     console.log(event.day.toolTip);
@@ -26,6 +39,7 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.golyasakkEvents.push({ 
       title: "Újévi sakkozás", 
       url: 'https://www.facebook.com/golyasakk/', 
@@ -51,26 +65,6 @@ export class NewsComponent implements OnInit {
           toolTip: d.title + '\n' + d.url
         })
     });
-
-    this.news.push({
-      title: "Könyvtár",
-      description: "Kaptunk pár könyvet, amiket olvashattok, vagy akár ki is kölcsönözhettek majd. Van köztük edzéshez ajánlott, ismeretterjesztő, életrajz, és kicsit már ezoterikus könyv is. A könyvek listájáért katt a könyvtár menüpontra!",
-      img: "",
-      date: "2022. Jan. 16 - Geza"
-    })
-    this.news.push({
-      title: "Az új év első sakkozása",
-      description: "Sziasztok\nJanuár 16.-án kezdünk, 17:00-kor!",
-      img: "",
-      date: "2021. Dec. 27 - Geza"
-    })
-    this.news.push({
-      title: "Készül a honlap",
-      description: `Lassan de biztosan készül a gólyasakk.hu! Ide a képeket fogjuk feltölteni és a kezdőoldalon a naptárban összegyűjtjük az eseményeket. \n\n Aki szívesen hozzátenne az oldalhoz, nyisson itt egy pull requestet: https://github.com/gezavagyok/golyasakk`,
-      img: "",
-      date: "2021. Dec. 27 - Geza"
-    })
-    
   }
 
   getToday(): number {
