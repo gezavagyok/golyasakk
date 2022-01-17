@@ -3,7 +3,7 @@
     <mat-grid-list cols="5">
         <mat-grid-tile [colspan]="3" [rowspan]="2">
             <ul>
-                <li *ngFor="let item of news">
+                <li *ngFor="let item of (news | async)?.slice()?.reverse();">
                     <mat-card class="news-card">
                         <mat-card-title>{{item.title}}</mat-card-title>
                         <mat-card-subtitle>{{item.date}}</mat-card-subtitle>
