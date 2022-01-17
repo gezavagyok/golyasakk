@@ -1,5 +1,5 @@
 <div class="gold-background">
-    <table mat-table [dataSource]="booksToRent" class="mat-elevation-z8">
+    <table mat-table [dataSource]="(booksToRent | async)!" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
