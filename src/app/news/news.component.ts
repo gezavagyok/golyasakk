@@ -4,13 +4,23 @@ import { GolyasakkEvent } from '../eventcalendar/golyasakkEvents';
 import { GolyasakkNews } from './golyasakkNews';
 import { GoogleSheetsDbService } from 'ng-google-sheets-db';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-const attributeMapping = {
+const newsAttributeMapping = {
   title: "title",
   description: "description",
   img: "img",
   date: "date"
+};
+
+const eventsAttributeMapping = {
+  title: "title",
+  url: "url",
+  year: "year",
+  month: "month",
+  day: "day",
+  color: "color"
 };
 
 @Component({
@@ -22,17 +32,17 @@ export class NewsComponent implements OnInit {
 
   news: Observable<GolyasakkNews[]>;
 
-  golyasakkEvents: Observable<GolyasakkEvent[]>;
-
-  dataSource: DayC[] = []
-
-  freestyleChessColor = '#0167c7';
-  trainingEventColor = '#01a7ca';
-  championshipColor = '#aa67c7';
+  dataSource: Observable<DayC[]>;
 
   constructor(private googleSheetsDbService: GoogleSheetsDbService) {
-    this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.newsWorksheetName, attributeMapping)
-    this.golyasakkEvents = this.googleSheetsDbService.get<GolyasakkEvent>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.eventsWorksheetName, attributeMapping)
+    this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.newsWorksheetName, newsAttributeMapping);
+    this.dataSource = this.googleSheetsDbService.get<GolyasakkEvent>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.eventsWorksheetName, eventsAttributeMapping)
+      .pipe(map(d => d.map(gevent => {
+        return {date: this.getDay(gevent.year, gevent.month, gevent.day),
+          backgroundColor: gevent.color,
+          toolTip: gevent.title + '\n' + gevent.url
+        };
+      })));
   }
 
   eventClick(event: any) {
@@ -41,15 +51,7 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.golyasakkEvents.subscribe(e => {
-      e.forEach((d) => {
-        this.dataSource.push({
-          date: this.getDay(d.year, d.month, d.day),
-          backgroundColor: d.color,
-          toolTip: d.title + '\n' + d.url
-        })
-      });
-    });
+    
   }
 
   getDay(year: number, month: number, day: number): number {

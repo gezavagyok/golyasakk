@@ -16,7 +16,7 @@
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2" [rowspan]="2" rowHeight="600px">
             <div class="white-background">
-                <calendar-panel [dataSource]="dataSource" (clickDate)="eventClick($event)"></calendar-panel>
+                <calendar-panel [dataSource]="(dataSource | async)!" (clickDate)="eventClick($event)"></calendar-panel>
             </div>
         </mat-grid-tile>
     </mat-grid-list>
