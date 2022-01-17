@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DayC } from 'material-calendar';
 import { GolyasakkEvent } from '../eventcalendar/golyasakkEvents';
-import { GolyasakkNews } from './golyasakkNews'; 
+import { GolyasakkNews } from './golyasakkNews';
 import { GoogleSheetsDbService } from 'ng-google-sheets-db';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -22,15 +22,17 @@ export class NewsComponent implements OnInit {
 
   news: Observable<GolyasakkNews[]>;
 
-  golyasakkEvents: GolyasakkEvent[] = []
+  golyasakkEvents: Observable<GolyasakkEvent[]>;
+
   dataSource: DayC[] = []
 
   freestyleChessColor = '#0167c7';
-  trainingEventColor = '#01a7ca'; 
+  trainingEventColor = '#01a7ca';
   championshipColor = '#aa67c7';
 
-  constructor(private googleSheetsDbService: GoogleSheetsDbService) { 
-    this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.worksheetName, attributeMapping)
+  constructor(private googleSheetsDbService: GoogleSheetsDbService) {
+    this.news = this.googleSheetsDbService.get<GolyasakkNews>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.newsWorksheetName, attributeMapping)
+    this.golyasakkEvents = this.googleSheetsDbService.get<GolyasakkEvent>(environment.spreadsheetConf.spreadsheetId, environment.spreadsheetConf.eventsWorksheetName, attributeMapping)
   }
 
   eventClick(event: any) {
@@ -39,47 +41,21 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.golyasakkEvents.push({ 
-      title: "Újévi sakkozás", 
-      url: 'https://www.facebook.com/golyasakk/', 
-      year: 2022,
-      month: 1,
-      day: 16,
-      color: this.freestyleChessColor
-    })   
-
-    this.golyasakkEvents.push({ 
-      title: "Edzes", 
-      url: 'https://www.facebook.com/golyasakk/', 
-      year: 2022,
-      month: 1,
-      day: 23,
-      color: this.trainingEventColor
-    })  
-
-    this.golyasakkEvents.forEach((d) => {
+    this.golyasakkEvents.subscribe(e => {
+      e.forEach((d) => {
         this.dataSource.push({
           date: this.getDay(d.year, d.month, d.day),
           backgroundColor: d.color,
           toolTip: d.title + '\n' + d.url
         })
+      });
     });
-  }
-
-  getToday(): number {
-    const today = new Date();
-    today.setHours(0);
-    today.setMinutes(0);
-    today.setSeconds(0);
-    today.setMilliseconds(0);
-    return today.getTime();
   }
 
   getDay(year: number, month: number, day: number): number {
     const dateToSet = new Date();
     dateToSet.setFullYear(year);
-    dateToSet.setMonth(month-1);
+    dateToSet.setMonth(month - 1);
     dateToSet.setDate(day);
     dateToSet.setHours(0);
     dateToSet.setMinutes(0);
