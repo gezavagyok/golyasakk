@@ -25,6 +25,7 @@ import { MatDividerModule} from '@angular/material/divider';
 import { LibraryComponent } from './library/library.component';
 import { MatTableModule } from '@angular/material/table';
 import { API_KEY, GoogleSheetsDbService} from 'ng-google-sheets-db';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { API_KEY, GoogleSheetsDbService} from 'ng-google-sheets-db';
     MatListModule, MatTableModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'hu-HU' },
-              { provide: API_KEY, useValue: 'AIzaSyDIFqbiUW5WN99BxOSgcWywSoZT7RGOZIg'},
+              { provide: API_KEY, useValue: environment.googleSheetsApiKey},
             GoogleSheetsDbService],
   bootstrap: [AppComponent]
 })
