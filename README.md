@@ -1,37 +1,54 @@
-# Golyasakk
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal TypeScript starter
+</h1>
 
-[Angular CLI](https://github.com/angular/angular-cli) v13.0.4.
+## 🚀 Quick start
 
-## Development
+1.  **Create a Gatsby site.**
 
-`ng serve --open` - dev server.
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
-## Modules
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby
+    ```
 
-aboutus: Elérhetőség fül
+2.  **Start developing.**
 
-chessboard: - nincs használva, ha lenne puzzle fül, ez renderelné ki a napi puzzle-t, be kellene hozzá kötni 2 dolgot:
+    Navigate into your new site’s directory and start it up.
 
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-* chessground - tábla
-* chess.js - sakk lépéseket validál, minimál AI
+3.  **Open the code and start customizing!**
 
+    Your site is now running at http://localhost:8000!
 
-eventcalendar: - nincs használva, de ide kellene refaktorálni a news rész naptárát.
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
-gallery: Képek fül
+4.  **Learn more**
 
-news: Hírek fül, kezdőoldal
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-puzzles: nincs használva, ha lesz chessground + chessjs, betehető
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-toolbarmenu: oldal tetején ez a menü + navigáció
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-# Service
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-chesscom service: chess.com napi puzzle-ját adja vissza
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-lichess service: lichess.org napi puzzle-jét adja vissza
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
+## 🚀 Quick start (Gatsby Cloud)
 
+Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
+[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
