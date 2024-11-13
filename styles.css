@@ -10,7 +10,10 @@ html,
 body {
     height: 100%;
     overflow-y: auto;
-    font-family: Arial, sans-serif;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* Basic styles for the page sections */
@@ -48,6 +51,7 @@ body {
     font-weight: bold;
     margin-right: 10px;
 }
+
 
 /* Section layout */
 .section-content {
