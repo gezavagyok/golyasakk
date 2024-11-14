@@ -62,18 +62,17 @@ body {
     /* Full height for content alignment */
 }
 
-/* Map and location styling */
-.map,
-.location {
-    flex: 1;
-    padding: 20px;
+.about-content {
+    display: flex;
+    gap: 20px; /* Space between columns */
 }
 
-.map {
-    text-align: center;
-    border: 1px solid #ccc;
-    height: 200px;
-    margin-right: 20px;
+.about-text {
+    flex: 1; /* 1 part of the 1:2 ratio */
+}
+
+.about-image {
+    flex: 2; /* 2 parts of the 1:2 ratio */
 }
 
 .members {
@@ -109,3 +108,10 @@ body {
     font-size: 0.8em;
     color: #888;
 }
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+  }
