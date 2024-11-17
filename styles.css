@@ -20,7 +20,7 @@ html, body {
 }
 
 .section {
-    height: 600px; /* Fixed height for sections */
+    height: 650px; /* Fixed height for sections */
 }
 
 /* Header */
@@ -54,22 +54,8 @@ html, body {
 .about-image img, 
 .responsive-image {
     width: 100%;
+    max-width: 600px;
     height: auto;
-}
-
-@media (min-width: 768px) {
-    .section-content, .about-content {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .section-content > div, 
-    .about-image, 
-    .about-text, 
-    .location, 
-    .location-image {
-        flex: 1;
-    }
 }
 
 /* Members grid */
