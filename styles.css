@@ -1,44 +1,35 @@
-/* Resetting the default margin and padding */
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Setting full-height for the body and allowing scrolling */
-html,
-body {
+html, body {
     height: 100%;
     overflow-y: auto;
     font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 300;
-    font-style: normal;
 }
 
-/* Basic styles for the page sections */
-.header,
-.section,
-.footer {
+/* Section and general layout */
+.header, .section, .footer {
     width: 100%;
     padding: 20px;
     border-bottom: 1px solid #ccc;
-    box-sizing: border-box;
 }
 
 .section {
-    height: 600px;
-    /* Fixed height for each section */
+    height: 600px; /* Fixed height for sections */
 }
 
-/* Header styling */
+/* Header */
 .header {
     display: flex;
     align-items: center;
     background-color: #f5f5f5;
 }
 
-/* Logo styling */
 .logo {
     width: 50px;
     height: 50px;
@@ -52,86 +43,40 @@ body {
     margin-right: 10px;
 }
 
-
-/* Section layout */
-.section-content {
+/* Responsive content layout */
+.section-content, .about-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    /* Full height for content alignment */
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column; /* Default mobile layout */
+    flex-direction: column;
     gap: 1rem;
 }
 
-.about-image img {
-    width: 100%;
-    height: auto;
-}
-
-@media (min-width: 768px) { /* Adjust this breakpoint based on your design */
-    .about-content {
-        flex-direction: row; /* Switch to 2-column layout for desktop */
-        align-items: center;
-    }
-
-    .about-image {
-        flex: 1; /* Make both columns take equal width */
-    }
-
-    .location-image {
-        flex: 1;
-    }
-
-    .location {
-        flex: 1;
-    }
-
-    .about-text {
-        flex: 1;
-    }
-}
-
-.section-content {
-    display: flex;
-    flex-direction: column; /* Default for mobile */
-    gap: 1rem; /* Add some space between the elements */
-}
-
-.section-content picture img {
+.section-content img, 
+.about-image img, 
+.responsive-image {
     width: 100%;
     height: auto;
 }
 
 @media (min-width: 768px) {
-    .section-content {
-        flex-direction: row; /* Switch to horizontal layout for desktop */
-        align-items: center; /* Align items vertically */
+    .section-content, .about-content {
+        flex-direction: row;
+        align-items: center;
     }
 
-    .section-content > div {
-        flex: 1; /* Make both columns take equal width */
-    }
-
-    .location {
-        flex: 1; /* Adjustable if you want more or less space for text */
+    .section-content > div, 
+    .about-image, 
+    .about-text, 
+    .location, 
+    .location-image {
+        flex: 1;
     }
 }
 
-
-
+/* Members grid */
 .members {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columns */
-    grid-template-rows: repeat(3, auto);
-    /* 3 rows */
     gap: 20px;
-    /* Space between grid items */
     padding: 20px 0;
 }
 
@@ -146,21 +91,9 @@ body {
     background-color: #ccc;
 }
 
-/* Match styling */
-.match {
-    padding: 20px 0;
-}
-
-/* Footer styling */
+/* Footer */
 .footer {
     text-align: center;
     font-size: 0.8em;
     color: #888;
 }
-
-.responsive-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-  }
