@@ -27,7 +27,7 @@ body {
 }
 
 .section {
-    height: 800px;
+    height: 600px;
     /* Fixed height for each section */
 }
 
@@ -64,16 +64,65 @@ body {
 
 .about-content {
     display: flex;
-    gap: 20px; /* Space between columns */
+    flex-direction: column; /* Default mobile layout */
+    gap: 1rem;
 }
 
-.about-text {
-    flex: 1; /* 1 part of the 1:2 ratio */
+.about-image img {
+    width: 100%;
+    height: auto;
 }
 
-.about-image {
-    flex: 2; /* 2 parts of the 1:2 ratio */
+@media (min-width: 768px) { /* Adjust this breakpoint based on your design */
+    .about-content {
+        flex-direction: row; /* Switch to 2-column layout for desktop */
+        align-items: center;
+    }
+
+    .about-image {
+        flex: 1; /* Make both columns take equal width */
+    }
+
+    .location-image {
+        flex: 1;
+    }
+
+    .location {
+        flex: 1;
+    }
+
+    .about-text {
+        flex: 1;
+    }
 }
+
+.section-content {
+    display: flex;
+    flex-direction: column; /* Default for mobile */
+    gap: 1rem; /* Add some space between the elements */
+}
+
+.section-content picture img {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .section-content {
+        flex-direction: row; /* Switch to horizontal layout for desktop */
+        align-items: center; /* Align items vertically */
+    }
+
+    .section-content > div {
+        flex: 1; /* Make both columns take equal width */
+    }
+
+    .location {
+        flex: 1; /* Adjustable if you want more or less space for text */
+    }
+}
+
+
 
 .members {
     display: grid;
